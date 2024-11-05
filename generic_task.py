@@ -4,6 +4,7 @@ import click
 
 import task0
 import task_s1e1
+import task_s1e2
 
 # consts
 config = configparser.ConfigParser()
@@ -25,12 +26,21 @@ def _day0_task():
 
 def _s1e1_task():
     task_s1e1.solve_task(
-        base_url = config.get("URLS", "robots_system"),
-        ai_devs_key = config.get("KEYS", "AI_DEVS"),
-        openai_key = config.get("KEYS", "OPEN_AI"),
-        xyz_agents_username = config.get("XYZ_AGENTS", "username"), 
-        xyz_agents_pass = config.get("XYZ_AGENTS", "password"),
-        system_prompt = config.get("PROMPTS", "xyz_agents")
+        base_url=config.get("URLS", "robots_system"),
+        ai_devs_key=config.get("KEYS", "AI_DEVS"),
+        openai_key=config.get("KEYS", "OPEN_AI"),
+        xyz_agents_username=config.get("XYZ_AGENTS", "username"),
+        xyz_agents_pass=config.get("XYZ_AGENTS", "password"),
+        system_prompt=config.get("PROMPTS", "xyz_agents_year"),
+    )
+
+
+def _s1e2_task():
+    task_s1e2.solve_task(
+        base_url=config.get("URLS", "robots_system"),
+        ai_devs_key=config.get("KEYS", "AI_DEVS"),
+        openai_key=config.get("KEYS", "OPEN_AI"),
+        system_prompt=config.get("PROMPTS", "xyz_agents_facts"),
     )
 
 
@@ -42,6 +52,16 @@ def day0_task():
 @group.command()
 def s1e1_task():
     _s1e1_task()
+
+
+@group.command()
+def s1e1_task():
+    _s1e1_task()
+
+
+@group.command()
+def s1e2_task():
+    _s1e2_task()
 
 
 if __name__ == "__main__":
