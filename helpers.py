@@ -1,6 +1,7 @@
 from typing import Union, List
 from dataclasses import dataclass
 
+
 @dataclass
 class PayloadBody:
     api_key: str
@@ -8,8 +9,4 @@ class PayloadBody:
     answer: Union[str, List[str]]
 
     def to_dict(self) -> dict:
-        return {
-            "task": self.task_name,
-            "apikey": self.api_key,
-            "answer": self.answer
-            }
+        return {"task": self.task_name, "apikey": self.api_key, "answer": self.answer}

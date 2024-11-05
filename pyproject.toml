@@ -12,6 +12,8 @@ click = "^8.1.7"
 black = "^24.3.0"
 isort = "^5.13.2"
 langchain = "^0.1.13"
+beautifulsoup4 = "^4.12.3"
+openai = "^1.54.0"
 
 [tool.poetry.group.dev.dependencies]
 requests = "^2.31.0"
