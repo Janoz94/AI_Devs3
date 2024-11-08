@@ -6,6 +6,7 @@ import task0
 import task_s1e1
 import task_s1e2
 import task_s1e3
+import task_s1e5
 
 # consts
 config = configparser.ConfigParser()
@@ -46,17 +47,20 @@ def _s1e2_task():
 
 
 def _s1e3_task():
-    # task_s1e2.solve_task(
-    #     base_url=config.get("URLS", "robots_system"),
-    #     ai_devs_key=config.get("KEYS", "AI_DEVS"),
-    #     openai_key=config.get("KEYS", "OPEN_AI"),
-    #     system_prompt=config.get("PROMPTS", "xyz_agents_facts"),
-    # )
     task_s1e3.solve_task(
-        base_url=config.get("URLS", "centrala_aidevs"),
+        base_url=config.get("URLS", "aidevs_agency"),
         ai_devs_key=config.get("KEYS", "AI_DEVS"),
         openai_key=config.get("KEYS", "OPEN_AI"),
         system_prompt=config.get("PROMPTS", "centrala_answer_and_fill"),
+    )
+
+
+def _s1e5_task():
+    task_s1e5.solve_task(
+        agency_url=config.get("URLS", "aidevs_agency"),
+        local_url=config.get("URLS", "local_host"),
+        ai_devs_key=config.get("KEYS", "AI_DEVS"),
+        system_prompt=config.get("PROMPTS", "anonimize_data"),
     )
 
 
@@ -83,6 +87,11 @@ def s1e2_task():
 @group.command()
 def s1e3_task():
     _s1e3_task()
+
+
+@group.command()
+def s1e5_task():
+    _s1e5_task()
 
 
 if __name__ == "__main__":
